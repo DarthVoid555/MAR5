@@ -3,3 +3,13 @@ gy {color: #4d4d4d; background: #808080; font-size: 30px; }
 gn {color: #052602; background: #118707; font-size: 30px; }
 y {color: #666600; background: #ffff00; font-size: 30px; }
 r {color: #660000; background: #ff0000; font-size: 30px; }
+
+form.login_form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #ffcc00;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
