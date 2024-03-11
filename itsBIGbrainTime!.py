@@ -1,8 +1,7 @@
 from flask import Flask, url_for
 
+
 app = Flask(__name__)
-
-
 @app.route('/')
 def nothnig():
     return "Миссия Колонизация Марса"
@@ -32,7 +31,27 @@ def mars_image():
                     <h3>Вот она какая, красная планета.</h3>
                   </body>
                 </html>"""
-
+@app.route('/promotion_image')
+def promotion_image():
+    return f"""<!doctype html>
+                <html lang="en">
+                  <head>
+                    <meta charset="utf-8">
+                    <title>Колонизация</title>
+                    <link rel="stylesheet" href="{url_for('static', filename='css/style.css')}">
+                  </head>
+                  <body>
+                    <h2>Жди нас, Марс!</h2>
+                    <img src="{url_for('static', filename='img/MARS_lidl.png')}"
+                    alt="здесь должна была быть картинка, но не нашлась">
+                    <br/>
+                    <gy>Человечество вырастает из детства</gy><br/>
+                    <gn>Человечеству мала одна планета</gn><br/>
+                    <gy>Мы сделаем обитаемыми безжизненные пока планеты</gy><br/>
+                    <y>И начинаем с Марса!</y><br/>
+                    <r>Присоединяйся!</r><br/>
+                  </body>
+                </html>"""
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
