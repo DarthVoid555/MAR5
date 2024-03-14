@@ -1,19 +1,24 @@
 from flask import Flask, url_for, request
 
+
 app = Flask(__name__)
+
 @app.route('/')
 def nothnig():
     return "Миссия Колонизация Марса"
 
+
 @app.route('/index')
 def index():
     return "И на Марсе будут яблони цвести!"
+
 
 @app.route('/promotion')
 def promotion():
     list = ['Человечество вырастает из детства.', 'Человечеству мала одна планета.',
             'Мы сделаем обитаемыми безжизненные пока планеты.', 'И начнем с Марса!', 'Присоединяйся!']
     return '</br>'.join(list)
+
 
 @app.route('/image_mars')
 def mars_image():
@@ -30,6 +35,7 @@ def mars_image():
                     <h3>Вот она какая, красная планета.</h3>
                   </body>
                 </html>"""
+
 @app.route('/promotion_image')
 def promotion_image():
     return f"""<!doctype html>
@@ -69,13 +75,13 @@ def form_sample():
                             <title>Пример формы</title>
                           </head>
                           <body>
-                            <h1>Форма для регистрации в суперсекретной системе</h1>
+                            <h1 class="centered">Анкета претендента</h1>
+                            <h3>на участие в миссии</h3>
                             <div>
                                 <form class="login_form" method="post">
                                     <input type="familia" class="form-control" id="familia" placeholder="Введите фамилию" name="familia">
                                     <input type="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Введите имя" name="name">
                                     <div class="form-group">
-                                        </div>
                                         <label for="classSelect">Какое у Вас образование?</label>
                                         <select class="form-control" id="educationSelect" name="education">
                                           <option>Начальное</option>
@@ -86,21 +92,51 @@ def form_sample():
                                     <div class="form-group">
                                         <label for="form-check">Какие у Вас есть профессии?</label>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="job" id="engie-1" value="engie-1" checked>
+                                          <input class="form-check-input" type="checkbox" name="job" id="engie-1" value="engie-1" check>
                                           <label class="form-check-label" for="engie-1">
                                             Инженер-исследователь
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="job" id="engie-2" value="engie-2" checked>
+                                          <input class="form-check-input" type="checkbox" name="job" id="engie-2" value="engie-2" check>
                                           <label class="form-check-label" for="engie-2">
                                             Инженер-строитель
                                           </label>
                                         </div>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="job" id="engie-2" value="engie-2" checked>
-                                          <label class="form-check-label" for="engie-2">
-                                            Инженер-строитель
+                                          <input class="form-check-input" type="checkbox" name="job" id="pilot" value="pilot" check>
+                                          <label class="form-check-label" for="pilot">
+                                            Пилот
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="job" id="engie-3" value="engie-3" check>
+                                          <label class="form-check-label" for="engie-3">
+                                            Инженер по жизнеобеспечению
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="job" id="engie-4" value="engie-4" check>
+                                          <label class="form-check-label" for="engie-4">
+                                            Инженер по радиационной защите
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="job" id="engie-5" value="engie-5" check>
+                                          <label class="form-check-label" for="engie-5">
+                                            Инженер-дворф
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="job" id="engie-6" value="engie-6" check>
+                                          <label class="form-check-label" for="engie-6">
+                                            Инженер из TF2
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="job" id="bob" value="bob" check>
+                                          <label class="form-check-label" for="bob">
+                                            Боб строитель (Всё построит)
                                           </label>
                                         </div>
                                     </div>
@@ -115,7 +151,7 @@ def form_sample():
                                     <div class="form-group">
                                         <label for="form-check">Укажите пол</label>
                                         <div class="form-check">
-                                          <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+                                          <input class="form-check-input" type="radio" name="sex" id="male" value="male" check>
                                           <label class="form-check-label" for="male">
                                             Мужской
                                           </label>
